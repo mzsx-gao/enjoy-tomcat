@@ -18,7 +18,7 @@ public class ServletDemo {
         //自定义的一个Servlet(专门处理http请求)
         HttpServlet httpServlet = new HttpServlet() {
             @Override
-            public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+            public void service(ServletRequest req, ServletResponse res) throws IOException {
                 res.getWriter().write("hello world!");
             }
         };
