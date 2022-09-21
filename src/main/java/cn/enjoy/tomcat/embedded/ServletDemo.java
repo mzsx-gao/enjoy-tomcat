@@ -13,6 +13,7 @@ import java.io.IOException;
  * 使用嵌入式启动的方式启动一个Servlet
  */
 public class ServletDemo {
+
     public static void main(String[] args) throws Exception {
 
         //自定义的一个Servlet(专门处理http请求)
@@ -26,10 +27,13 @@ public class ServletDemo {
         Tomcat tomcat = new Tomcat();
         //部署应用的context
         Context context = tomcat.addContext("/demo",null);
+
         //相当于往应用中添加Servlet
         tomcat.addServlet(context,"hello",httpServlet);
+
         //相当于添加了servletMapping 映射信息
         context.addServletMappingDecoded("/hello","hello");
+
         //启动Tomcat  ---生命周期
         tomcat.init();
         tomcat.start();
